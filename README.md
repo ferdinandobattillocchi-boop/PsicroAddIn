@@ -6,15 +6,15 @@ PsicroAddIn is a high-performance Microsoft Excel add-in (`.xll`) providing a li
 
 ---
 
-##  English Version
+## English Version
 
-###  Key Features
+### Key Features
 * **High Performance:** Written in **C** for maximum speed, ideal for massive datasets (e.g., hourly annual simulations).
 * **Numerical Precision:** Uses the **Newton-Raphson** algorithm for property inversion.
 * **Dynamic Arrays:** Fully supports vectorized inputs (e.g., `A1:A100`) and automatic horizontal spilling.
 * **Dual Units:** Supports both **SI** and **IP** (Imperial) units with standard enthalpy zero-point shifts.
 
-###  Installation
+### Installation
 1. Download the version matching your Excel architecture from the `release` folder:
    * `PsicroAddIn-AddIn64-packed.xll` (for **64-bit** Excel)
    * `PsicroAddIn-AddIn-packed.xll` (for **32-bit** Excel)
@@ -22,7 +22,7 @@ PsicroAddIn is a high-performance Microsoft Excel add-in (`.xll`) providing a li
 3. At the bottom, select **Excel Add-ins** in the "Manage" dropdown and click **Go...**.
 4. Click **Browse...**, select the `.xll` file, and click **OK**.
 
-###  Usage: The PSICRO Function
+### Usage: The PSICRO Function
 Main function: `=PSICRO(p1, v1, p2, v2, target, [units])`
 
 * **p1, p2**: Labels of known variables (e.g., `"Tdb"`, `"RH"`, `"H"`).
@@ -32,7 +32,7 @@ Main function: `=PSICRO(p1, v1, p2, v2, target, [units])`
 
 **Example:** `=PSICRO("T"; 26; "RH"; 50; "H,TWB")`
 
-###  Supported Variables
+### Supported Variables
 | Code | Description | Units (SI / IP) |
 | :--- | :--- | :--- |
 | **T / Tdb** | Dry Bulb Temperature | °C / °F |
@@ -47,13 +47,13 @@ Main function: `=PSICRO(p1, v1, p2, v2, target, [units])`
 
 ##  Versione Italiana
 
-###  Caratteristiche
+### Caratteristiche
 * **Performance:** Core in **C** estremamente veloce per calcoli massivi.
 * **Precisione:** Algoritmo **Newton-Raphson** per l'inversione delle proprietà.
 * **Vettoriale:** Supporta i "Dynamic Arrays" di Excel (es. `A1:A100`).
 * **Unità di Misura:** Gestione completa SI e IP (Imperiali) con shift dell'entalpia conforme ASHRAE.
 
-###  Installazione
+### Installazione
 1. Scarica il file dalla cartella `release` in base al tuo Excel:
    * `PsicroAddIn-AddIn64-packed.xll` (**64-bit**)
    * `PsicroAddIn-AddIn-packed.xll` (**32-bit**)
@@ -61,7 +61,7 @@ Main function: `=PSICRO(p1, v1, p2, v2, target, [units])`
 3. In basso, seleziona **Componenti aggiuntivi di Excel** e clicca **Vai...**.
 4. Clicca **Sfoglia...**, seleziona il file e conferma.
 
-###  Utilizzo
+### Utilizzo
 Funzione principale: `=PSICRO(p1; v1; p2; v2; target; [units])`
 
 * **Esempio 1:** `=PSICRO("T"; 26; "UR"; 50; "H")` -> Restituisce l'entalpia.
@@ -74,10 +74,15 @@ Funzione principale: `=PSICRO(p1; v1; p2; v2; target; [units])`
 
 ---
 
-## License
+## Acknowledgments & Contributions / Ringraziamenti e Contributi
+
+**EN:** This is a core tool intended for preliminary psychrometric calculations in professional life. I would like to thank anyone who wishes to use, critique, or expand this utility. Please feel free to report any bugs. 
+*Note: The 32-bit version is currently untested as I am working on a 64-bit environment.*
+
+**IT:** Questo è uno strumento di base per calcoli psicrometrici di prima approssimazione nella vita professionale. Ringrazio sentitamente chiunque vorrà utilizzarlo, criticarlo, ampliarlo o segnalare eventuali bug.
+*Nota: Ad oggi la versione a 32bit non è stata testata personalmente in quanto opero su ambiente a 64bit.*
+
+---
+
+## ⚖️ License
 This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)** - see the [LICENSE](LICENSE) file for details.
-
-## Contributing
-Bug reports and pull requests are welcome! For major changes, please open an issue first.
-
-

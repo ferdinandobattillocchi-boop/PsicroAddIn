@@ -1,6 +1,6 @@
 /*
  * PsicroAddIn - Libreria Psicrometrica per Excel
- * Copyright (C) 2024  [Tuo Nome o Nome Utente GitHub]
+ * Copyright (C) 2024  Ferdinando Battillocchi
  * * Questo programma è software libero: è possibile ridistribuirlo e/o 
  * modificarlo secondo i termini della licenza GNU General Public 
  * License come pubblicata dalla Free Software Foundation, versione 3.
@@ -23,4 +23,5 @@ namespace PsicroAddIn
     {
     }
 }
+
 

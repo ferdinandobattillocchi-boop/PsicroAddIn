@@ -1,4 +1,16 @@
-
+/*
+ * PsicroAddIn - Libreria Psicrometrica per Excel
+ * Copyright (C) 2024  [Tuo Nome o Nome Utente GitHub]
+ * * Questo programma è software libero: è possibile ridistribuirlo e/o 
+ * modificarlo secondo i termini della licenza GNU General Public 
+ * License come pubblicata dalla Free Software Foundation, versione 3.
+ * * Questo programma è distribuito nella speranza che possa essere utile, 
+ * ma SENZA ALCUNA GARANZIA; senza neppure la garanzia implicita di 
+ * COMMERCIABILITÀ o IDONEITÀ PER UNO SCOPO PARTICOLARE. 
+ * Vedere la licenza GNU General Public License per ulteriori dettagli.
+ * * Dovresti aver ricevuto una copia della licenza GNU General Public License 
+ * insieme a questo programma. In caso contrario, vedi <https://www.gnu.org/licenses/>.
+ */
 #include <windows.h>
 #include "psicrometria.h"
 #include <math.h>
@@ -16,7 +28,7 @@ extern "C" {
 	/*
 	PSICRO_API Excel_set_quota(double altitude) {
 		set_patm_at_altitude(altitude);
-		return PATM; // Restituisce la pressione in kPa calcolata, cos� l'utente sa che ha funzionato
+		return PATM; // Restituisce la pressione in kPa calcolata, così l'utente sa che ha funzionato
 	} */
 
 	// --- FUNZIONI BASE ---
@@ -41,7 +53,7 @@ extern "C" {
 	PSICRO_API Excel_t_vau_tr(double vau, double tr) { return t_vau_tr(vau, tr); }
 	PSICRO_API Excel_t_tbu_tr(double tbu, double tr) { return t_tbu_tr(tbu, tr); }
 
-	// --- CALCOLO UMIDIT� RELATIVA (UR) ---
+	// --- CALCOLO UMIDITÀ RELATIVA (UR) ---
 	PSICRO_API Excel_ur_t_x(double t, double x) { return ur_t_x(t, x); }
 	PSICRO_API Excel_ur_t_h(double t, double h) { return ur_t_h(t, h); }
 	PSICRO_API Excel_ur_t_vau(double t, double vau) { return ur_t_vau(t, vau); }
@@ -58,7 +70,7 @@ extern "C" {
 	PSICRO_API Excel_ur_vau_tr(double vau, double tr) { return ur_vau_tr(vau, tr); }
 	PSICRO_API Excel_ur_tbu_tr(double tbu, double tr) { return ur_tbu_tr(tbu, tr); }
 
-	// --- CALCOLO UMIDIT� SPECIFICA (X) ---
+	// --- CALCOLO UMIDITÀ SPECIFICA (X) ---
 	PSICRO_API Excel_x_t_ur(double t, double ur) { return x_t_ur(t, ur); }
 	PSICRO_API Excel_x_t_h(double t, double h) { return x_t_h(t, h); }
 	PSICRO_API Excel_x_t_vau(double t, double vau) { return x_t_vau(t, vau); }
@@ -145,4 +157,5 @@ extern "C" {
 
 #ifdef __cplusplus
 }
+
 #endif

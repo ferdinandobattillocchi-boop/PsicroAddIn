@@ -5,28 +5,36 @@
 
 #ifdef _WIN32
 	#include <windows.h>
-// La macro deve includere il tipo 'double' per essere usata come PSICRO_API NomeFunzione
+// La macro include il tipo 'double' per essere usata come  - PSICRO_API NomeFunzione
 	#define PSICRO_API __declspec(dllexport) double WINAPI
 #else
 	#define PSICRO_API double
 #endif
- //#define PATM    101.325    
- #define CPAS    1.006      
- #define CPV     1.805       
- #define CPW     4.1868      
- #define LAMBDA  2501.0     
- #define RA      0.2870424636   // kJ/(kg·K)
- #define RV      0.4615236365  // kJ/(kg·K)
- #define RAV     0.6219453153   // Rapporto preciso (Rda/Rw)
+
+
+// --- COSTANTI FONDAMENTALI ---
+#define RAV         0.621945      // Rapporto masse molari Rav = Ra/Rv (Mw/Ma)
+#define RA          0.287042      // Costante aria secca [kJ/kgK]
+#define RV          0.461524      // Costante vapore acqueo [kJ/kgK]
+// --- CAPACITÀ TERMICHE [kJ/kgK] ---
+#define CPAS        1.006         // Aria secca
+#define CPV         1.860         // Vapore
+#define CPW         4.1868        // Acqua liquida
+#define CPICE       2.090         // Ghiaccio
+// --- CALORI LATENTI [kJ/kg] ---
+#define LAMBDA      2501.0        // Evaporazione a 0°C
+#define LAMBDA_ICE  333.4         // Fusione (Ghiaccio -> Liquido)
+// --- PUNTI DI SWITCH ---
+#define T_TRIPLO    0.01          // Punto triplo acqua [°C]
+#define P_TRIPLO    0.611657      // Pressione punto triplo [kPa]
 
 extern volatile double PATM;
-// Dichiarazione delle tue funzioni
-// Nel file psicrometria.h
 __declspec(dllexport) void WINAPI set_patm_at_altitude(double altitude);
 //void get_patm_at_altitude(double altitude);
 PSICRO_API Psat(double t);
 PSICRO_API TPsat(double p_kpa);
 PSICRO_API xsat_t(double t);
+PSICRO_API stima_iniziale_t(double p_kpa);
 PSICRO_API t_ur_x(double ur, double x);
 PSICRO_API t_ur_h(double ur, double h);
 PSICRO_API t_ur_vau(double ur, double vau);

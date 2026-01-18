@@ -23,7 +23,7 @@ extern "C" {
 	PSICRO_API Excel_Psat(double t) { return Psat(t); }
 	PSICRO_API Excel_TPsat(double p_kpa) { return TPsat(p_kpa); }
 	PSICRO_API Excel_xsat_t(double t) { return xsat_t(t); }
-
+	PSICRO_API Excel_stima_iniziale_t(double p_kpa) { return stima_iniziale_t(p_kpa); }
 	// --- CALCOLO TEMPERATURA (T) ---
 	PSICRO_API Excel_t_ur_x(double ur, double x) { return t_ur_x(ur, x); }
 	PSICRO_API Excel_t_ur_h(double ur, double h) { return t_ur_h(ur, h); }
